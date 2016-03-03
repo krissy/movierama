@@ -64,6 +64,7 @@ gem 'pry-doc'
 group :test do
   gem 'guard-rspec'    # Continuous testing
   gem 'rspec-rails'    # Test framework with Rail extensions
+  gem 'rspec-sidekiq'  # Helper for sidekiq tests
   gem 'poltergeist'    # Driver for PhantomJS headless browser
   gem 'capybara'       # DSL for browser control
 end
