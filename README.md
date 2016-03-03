@@ -17,7 +17,7 @@ Github has a nice link. Right there, on the right of your page!
 
 #### Dependencies
 
-Install Ruby 2.1.2 if necessary (if you use `rbenv`, it will yell at you if you
+Install Ruby 2.2.2 if necessary (if you use `rbenv`, it will yell at you if you
 don't).
 
 Run `bundler` as usual:
@@ -65,6 +65,20 @@ Login/signup use Omniauth with Github as a provider. If you're using Pow and the
 If not, you'll need to get your own OAuth tokens from Github and edit
 `.env` appropriately.
 
+
+#### Sending mail in development
+
+Use [Mailcatcher](http://mailcatcher.me/) to capture mail in your development environment.
+
+Install `mailcatcher`:
+
+    $ gem install mailcatcher
+
+Run it:
+
+    $ mailcatcher
+
+You can then browse to http://localhost:1080 to see the mail interface.
 
 
 ### Screenshot
