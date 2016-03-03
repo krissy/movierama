@@ -1,4 +1,6 @@
 class VotesController < ApplicationController
+  after_action :_notify_submitter, only: [:create]
+
   def create
     authorize! :vote, _movie
 
@@ -14,6 +16,12 @@ class VotesController < ApplicationController
   end
 
   private
+
+  def _notify_submitter
+    return unless %i{like hate}.include?(_type)
+    method_name = "#{_type.to_s}_email".to_sym
+    VoteMailer.delay.send(method_name, _movie, current_user) if VoteMailer.respond_to? method_name
+  end
 
   def _voter
     VotingBooth.new(current_user, _movie)
