@@ -1,0 +1,9 @@
+!!!
+%html
+  %head
+    %meta{ content: 'text/html', charset: 'UTF-8', "http-equiv" => 'Content-Type'}
+  %body
+    %h1 #{@voter.name} likes your movie!
+    %p
+      Hi #{@submitter.name},
+      #{@voter.name} just liked your movie submission, #{@movie.title}.
